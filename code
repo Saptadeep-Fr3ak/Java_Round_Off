@@ -1,0 +1,22 @@
+import java.util.Scanner;
+class RoundOff
+{
+  static void main()
+  {
+    Scanner sc = new Scanner (System.in);
+    System.out.println ("Enter a decimal number: ");  //To accept a umber from the user
+    double a = sc.nextDouble();
+    int p1 = (int)a;   //To extract the integral part
+    double p2 = a - p1;   //To extract the fractional part
+    System.out.print ("\nEnter the number of places to be rounded off: ");    //To accept the number of places to be rounded off
+    int n = sc.nextInt();
+    int p = (int)(p2*Math.pow(10, (n+1)));
+    int l = p % 10;   //To extract the last digit
+    if (l > 5)
+    {
+      p += 10;   //To round off the second last digit
+      }
+    p /= 10;    //To erase the last digit
+    System.out.println ("\nThe desired rounded off number " + p1 + "." +p);   //To print the rounded off number
+    }
+}
